@@ -9,4 +9,4 @@ def home_page():
     return render_template('welcome.html')
 
 
-app.run()
+#app.run()
