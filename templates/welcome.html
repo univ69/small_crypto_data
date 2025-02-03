@@ -16,13 +16,19 @@
                 <img src="{{ url_for('static', filename='images/bitcoin-btc-logo.svg') }}" alt="Bitcoin Logo" class="crypto-logo">
                 ${{ btc_price }}
                 <span class="price-change {% if change_result >= 0 %}positive{% else %}negative{% endif %}">
-                {{ change_result }}%
-            </span>
+                    {{ change_result }}%
+                </span>
             </h1>
         {% else %}
             <p>Данных нет.</p>
         {% endif %}
     </header>
 
+    <!-- Отображение среднего отклонения -->
+    <div class="price-deviation">
+        <p>Среднее отклонение цены за последний период: ${{ btc_price_std_deviation }}</p>
+    </div>
+
 </body>
 </html>
+
