@@ -2,24 +2,27 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- Подключение внешнего CSS файла -->
+    <!-- Подключение CSS-файла -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Small crypto data</title>
+    <title>Small Crypto Data</title>
 </head>
 <body>
 
-    <h1>Small Crypto Data</h1>
-
-    {% if btc_price and timestamp %}
-    <div class="btc_price">
-
-        <h2>Цена Bitcoin (UTC+2)</h2>
-        <p>Цена: ${{ btc_price }} - Время: {{ timestamp }}</p>
-    {% else %}
-        <p>Данных нет.</p>
-        </div>
-    {% endif %}
+    <!-- Шапка -->
+    <header class="header">
+        {% if btc_price %}
+            <h1 class="crypto-header">
+                Small Crypto Data
+                <img src="{{ url_for('static', filename='images/bitcoin-btc-logo.svg') }}" alt="Bitcoin Logo" class="crypto-logo">
+                ${{ btc_price }}
+                <span class="price-change {% if change_result >= 0 %}positive{% else %}negative{% endif %}">
+                {{ change_result }}%
+            </span>
+            </h1>
+        {% else %}
+            <p>Данных нет.</p>
+        {% endif %}
+    </header>
 
 </body>
 </html>
-
