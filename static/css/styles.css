@@ -1,27 +1,73 @@
+/* Подключаем шрифт Oswald из Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap');
+
+/* Общие стили */
 body {
-    font-family: sans-serif; /* Используем простой и читаемый шрифт */
-    margin: 10px; /* Добавляем отступы со всех сторон */
-    background-color: #f4f4f4; /* Светлый фон страницы */
-    color: #333; /* Темный цвет текста для хорошей контрастности */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    text-align: center; /* Заголовок по центру */
-    margin-bottom: 10px; /* Отступ снизу от заголовка */
-    color: #007bff; /* Синий цвет для заголовка */
+/* Шапка */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 8px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.btc_price {
-    border: 1px solid #ddd; /* Рамка для блока с ценой */
-    padding: 10px; /* Отступы внутри блока */
-    background-color: #fff; /* Белый фон для блока */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Тень для блока */
+/* Заголовок в шапке */
+.crypto-header {
+    font-family: 'Oswald', sans-serif; /* Используем Oswald */
+    font-size: 1.5em;
+    font-weight: 600; /* Можно изменить на 300 или 600 */
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-h2 {
-    color: #555; /* Более темный цвет для подзаголовка */
+/* Логотип */
+.crypto-logo {
+    width: 24px;
+    height: 24px;
 }
 
-p {
-    margin-bottom: 10px; /* Отступ снизу для абзацев */
+/* Основной контент */
+.content {
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px;
 }
+
+/* Стиль для процента изменения цены */
+.price-change {
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 12px; /* Закругленные края */
+    margin-left: 6px;
+    background-color: #e0e0e0; /* Светло-серый фон по умолчанию */
+    color: #333; /* Темно-серый текст по умолчанию */
+}
+
+/* Зеленый для положительного изменения (цвет цифр) */
+.price-change.positive {
+    background-color: #e0e0e0; /* Сохраняем светло-серый фон */
+    color: #388e3c; /* Зеленый для текста */
+}
+
+/* Красный для отрицательного изменения (цвет цифр) */
+.price-change.negative {
+    background-color: #e0e0e0; /* Сохраняем светло-серый фон */
+    color: #d32f2f; /* Красный для текста */
+}
+
